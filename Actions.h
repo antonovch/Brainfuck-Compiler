@@ -12,7 +12,6 @@ class Action{
 class LoopAction : public Action {
     public:
         LoopAction(int looplength);
-        void setLoopLength(int looplength);
     protected:
         int looplength;
 };

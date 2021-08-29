@@ -39,10 +39,6 @@ int PointerValue::exec(ExecutionState& es){
 LoopAction::LoopAction(int len) : looplength(len){
 }
 
-void LoopAction::setLoopLength(int len){
-    looplength = len;
-}
-
 LoopStart::LoopStart(int len) : LoopAction(len){ }
 
 LoopEnd::LoopEnd(int len) : LoopAction(len){ }
