@@ -14,7 +14,7 @@ int main(int argc, char **argv){
     string code = inputParser(argv[1]);
     Compiler cmp(code);
     cmp.compile();
-    string out = cmp.run();
+    cmp.run();
     cout << endl;
     return 0;
 }

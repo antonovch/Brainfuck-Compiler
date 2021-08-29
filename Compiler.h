@@ -23,7 +23,7 @@ class Compiler
         Compiler() = delete;
         Compiler(string code);
         void compile();
-        string run();
+        void run();
         int checkBalancedBracket();
 
     private:

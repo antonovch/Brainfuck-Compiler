@@ -1,8 +1,9 @@
+#include <iostream>
 #include <stack>
 #include "Compiler.h"
-#include <iostream>
 
 Compiler::Compiler(std::string code) : code(code){
+    // initialize all bytes to 0
     memset(state.data, 0, sizeof(state.data));
 }
 
@@ -79,15 +80,10 @@ void Compiler::compile(){
     }
 }
 
-string Compiler::run(){
-    string out;
+void Compiler::run(){
     int move;
     for (int i = 0; i < size(model);){
         move = model[i]->exec(state);
         i += move;
     }
-    for (int i = 0; i < code.length(); i++){
-        out += state.data[i];
-    }
-    return out;
 }
