@@ -6,6 +6,9 @@ struct ExecutionState;
 
 class Action{
     public:
+        /* exec methods take and modify the current state, 
+        and return integer of how far to move in the 
+        model vector. */
         virtual int exec(ExecutionState& es) = 0;
 };
 
