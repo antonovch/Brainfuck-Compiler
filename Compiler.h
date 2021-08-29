@@ -10,8 +10,8 @@ class Action;
 const int MAX_SIZE = 10000;
 
 struct ExecutionState{
-    char data[MAX_SIZE];
-    unsigned int pointer = 0;
+    char data[MAX_SIZE]; // array that keeps the data for manipulation
+    unsigned int pointer = 0; // current cursor position in data array
     char getCurrentValue(){
         return data[pointer];
     }
