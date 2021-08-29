@@ -3,8 +3,8 @@
 #include "Compiler.h"
 
 struct ExecutionState{
-    char data[MAX_SIZE];
-    unsigned int pointer;
+    char data[MAX_SIZE]; // array that keeps the data for manipulation
+    unsigned int pointer; // current cursor position in data array
     char getCurrentValue(){
         return data[pointer];
     }
