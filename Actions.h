@@ -9,7 +9,7 @@ class Action{
         /* exec methods take and modify the current state, 
         and return integer of how far to move in the 
         model vector. */
-        virtual int exec(ExecutionState& es) = 0;
+        virtual int exec(ExecutionState& state) = 0;
 };
 
 class LoopAction : public Action {
@@ -21,39 +21,39 @@ class LoopAction : public Action {
 
 class Increment : public Action {
     public:
-        virtual int exec(ExecutionState& es);
+        virtual int exec(ExecutionState& state);
 };
 
 class Decrement : public Action {
     public:
-        virtual int exec(ExecutionState& es);
+        virtual int exec(ExecutionState& state);
 };
 
 class Advance : public Action {
     public:
-        virtual int exec(ExecutionState& es);
+        virtual int exec(ExecutionState& state);
 };
 
 class Backtrack : public Action {
     public:
-        virtual int exec(ExecutionState& es);
+        virtual int exec(ExecutionState& state);
 };
 
 class PointerValue : public Action {
     public:
-        virtual int exec(ExecutionState& es);
+        virtual int exec(ExecutionState& state);
 };
 
 class LoopStart : public LoopAction {
     public:
         LoopStart(int looplength);
-        virtual int exec(ExecutionState& es);
+        virtual int exec(ExecutionState& state);
 };
 
 class LoopEnd : public LoopAction {
     public:
         LoopEnd(int looplength);
-        virtual int exec(ExecutionState& es);
+        virtual int exec(ExecutionState& state);
 };
 
 #endif
