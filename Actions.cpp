@@ -2,26 +2,26 @@
 #include <iostream>
 
 int Increment::exec(ExecutionState& state){
-    state.data[state.current_index]++;
+    ++(*state.it);
     return 1;
 }
 
 int Decrement::exec(ExecutionState& state){
-    state.data[state.current_index]--;
+    --(*state.it);
     return 1;
 }
 
 int Advance::exec(ExecutionState& state){
-    if (state.current_index == state.data.size()-1){
+    if (state.it == state.data.end()){
         state.data.push_back(0);
     } 
-    state.current_index++;
+    ++state.it;
     return 1;
 }
 
 int Backtrack::exec(ExecutionState& state){
-    if (state.current_index > 0){
-        state.current_index--;
+    if (state.it != state.data.begin()){
+        --state.it;
     } 
     else{
         throw runtime_error("Cannot backtrack before the beginning of the ExecutionState.data array.");

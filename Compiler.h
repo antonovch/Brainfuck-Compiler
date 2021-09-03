@@ -10,9 +10,9 @@ class Action;
 
 struct ExecutionState{
     vector<char> data{0}; // vector to keep the data for manipulation in
-    unsigned int current_index = 0; // current cursor position in data array
-    char getCurrentValue(){
-        return data[current_index];
+    vector<char>::iterator it = data.begin(); // current cursor position in data array
+    char& getCurrentValue(){
+        return *it;
     }
 };
 
