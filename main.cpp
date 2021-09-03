@@ -11,6 +11,7 @@ string strip(string codeline);
 
 int main(int argc, char **argv){
     
+    // string code = inputParser("test_files/print7.txt");
     string code = inputParser(argv[1]);
     Compiler cmp(code);
     cmp.compile();

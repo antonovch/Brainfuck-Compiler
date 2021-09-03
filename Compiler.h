@@ -7,13 +7,12 @@
 using namespace std;
 
 class Action;
-const int MAX_SIZE = 10000;
 
 struct ExecutionState{
-    char data[MAX_SIZE]; // array that keeps the data for manipulation
-    unsigned int pointer = 0; // current cursor position in data array
+    vector<char> data{0}; // vector to keep the data for manipulation in
+    unsigned int current_index = 0; // current cursor position in data array
     char getCurrentValue(){
-        return data[pointer];
+        return data[current_index];
     }
 };
 
@@ -31,7 +30,5 @@ class Compiler
         vector<shared_ptr<Action>> model;
         ExecutionState state;
 };
-
-
 
 #endif

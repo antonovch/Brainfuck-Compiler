@@ -2,10 +2,7 @@
 #include <stack>
 #include "Compiler.h"
 
-Compiler::Compiler(std::string code) : code(code){
-    // initialize all bytes to 0
-    memset(state.data, 0, sizeof(state.data));
-}
+Compiler::Compiler(std::string code) : code(code) { }
 
 int Compiler::checkBalancedBracket(){
     int balance(0);
