@@ -79,7 +79,7 @@ void Compiler::compile(){
 
 void Compiler::run(){
     int move;
-    for (int i = 0; i < size(model);){
+    for (int i = 0; i < model.size();){
         move = model[i]->exec(state);
         i += move;
     }

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <string>
 #include <numeric>
 #include "Compiler.h"
 using namespace std;
